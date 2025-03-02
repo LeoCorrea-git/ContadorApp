@@ -1,0 +1,89 @@
+﻿<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="ContadorApp.MainPage">
+
+    <!-- Definir a imagem de fundo -->
+    <ContentPage.BackgroundImageSource>
+        <FileImageSource File="fundo.jpg" />
+    </ContentPage.BackgroundImageSource>
+
+    <VerticalStackLayout Spacing="20" Padding="40" HorizontalOptions="Center" VerticalOptions="Center">
+        <!-- Seu conteúdo vai aqui, como os labels, botões, etc. -->
+        <Label Text="Contador"
+               FontSize="36"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center" />
+
+        <Label Text="1 vs 1"
+               FontSize="28"
+               FontAttributes="Bold"
+               TextColor="White"
+               HorizontalOptions="Center" />
+
+        <Grid ColumnDefinitions="*,Auto,*" RowDefinitions="Auto,Auto" HorizontalOptions="FillAndExpand" Padding="30,0">
+            <Label x:Name="contadorLabel1"
+                   Text="0"
+                   FontSize="50"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Grid.Column="0" />
+            <BoxView BackgroundColor="White" WidthRequest="2" HeightRequest="80"
+                     VerticalOptions="Center"
+                     Grid.Column="1" />
+            <Label x:Name="contadorLabel2"
+                   Text="0"
+                   FontSize="50"
+                   TextColor="White"
+                   FontAttributes="Bold"
+                   HorizontalOptions="Center"
+                   Grid.Column="2" />
+            <HorizontalStackLayout Grid.Column="0" Grid.Row="1" Spacing="15" HorizontalOptions="Center">
+                <Button Text="-"
+                        FontSize="25"
+                        BackgroundColor="Red"
+                        TextColor="White"
+                        CornerRadius="10"
+                        WidthRequest="60"
+                        Clicked="OnDecrementClicked1" />
+                <Button Text="+" 
+                        FontSize="30" 
+                        BackgroundColor="Green" 
+                        TextColor="White" 
+                        CornerRadius="10" 
+                        WidthRequest="60" 
+                        Clicked="OnIncrementClicked1" />
+            </HorizontalStackLayout>
+
+            <HorizontalStackLayout Grid.Column="2" Grid.Row="1" Spacing="15" HorizontalOptions="Center">
+                <Button Text="-"
+                        FontSize="25"
+                        BackgroundColor="Red"
+                        TextColor="White"
+                        CornerRadius="10"
+                        WidthRequest="60"
+                        Clicked="OnDecrementClicked2" />
+                <Button Text="+" 
+                        FontSize="25" 
+                        BackgroundColor="Green" 
+                        TextColor="White" 
+                        CornerRadius="10" 
+                        WidthRequest="60" 
+                        Clicked="OnIncrementClicked2" />
+            </HorizontalStackLayout>
+
+        </Grid>
+
+        <!-- Botão de Reset -->
+        <Button Text="🔄 Resetar"
+                FontSize="20"
+                BackgroundColor="Gray"
+                TextColor="White"
+                CornerRadius="10"
+                WidthRequest="150"
+                HorizontalOptions="Center"
+                Clicked="OnResetClicked" />
+    </VerticalStackLayout>
+
+</ContentPage>
